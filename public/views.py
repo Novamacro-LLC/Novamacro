@@ -48,3 +48,14 @@ def consulting(request):
         'desc': desc,
     }
     return render(request, 'public/consulting.html', context)
+
+#Create view for connect page
+def connect(request):
+    title = 'Novamacro, LLC Connect'
+    desc = ('Transform your business operations with consulting services tailored to your unique needs.')
+    context = {
+        'title': title,
+        'desc': desc,
+    }
+    return render(request, 'public/connect.html', context)
+
