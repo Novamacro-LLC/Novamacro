@@ -43,7 +43,7 @@ html { font-size: 16px; }
     <div class="container container-navbar">
       <a href="{% url 'home' %}" aria-current="page" class="brand-logo w-nav-brand w--current"><img src="{% static 'images/large.png' %}" alt="" class="brand-logo-image"></a>
       <nav role="navigation" class="navbar-menu w-nav-menu">
-        <a href="about-us.html" class="nav-link w-nav-link">About Us</a>
+        <a href="{% url 'about' %}" class="nav-link w-nav-link">About Us</a>
         <a href="#" class="nav-link w-nav-link">Products</a>
         <a href="#" class="nav-link w-nav-link">Consulting</a>
         <a href="#" class="nav-link w-nav-link">Connect</a>
@@ -66,7 +66,7 @@ html { font-size: 16px; }
         <div class="footer-menu-wrapper">
           <a href="index.html" aria-current="page" class="footer-logo s-m-r-24 st-m-0 w-nav-brand w--current"><img src="images/large.png" alt="" class="brand-logo-image"></a>
           <div class="footer-navigation">
-            <a href="#" class="nav-link w-inline-block">
+            <a href="{% url 'about' %}" class="nav-link w-inline-block">
               <div>About Us</div>
             </a>
             <a href="#" class="nav-link w-inline-block">

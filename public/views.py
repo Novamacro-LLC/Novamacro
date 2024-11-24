@@ -13,3 +13,15 @@ def home(request):
         'desc': desc,
     }
     return render(request, 'public/index.html', context)
+
+
+#Create view for about page
+def about(request):
+    title = 'Novamacro, LLC About Us'
+    desc = ('Founded in 2017 in the heart of the Memphis area, Novamacro LLC bridges the gap between cutting-edge '
+            'technology and the practical needs of growing businesses.')
+    context = {
+        'title': title,
+        'desc': desc,
+    }
+    return render(request, 'public/about-us.html', context)
