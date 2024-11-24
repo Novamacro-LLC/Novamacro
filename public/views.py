@@ -25,3 +25,15 @@ def about(request):
         'desc': desc,
     }
     return render(request, 'public/about-us.html', context)
+
+
+#Create view for products page
+def products(request):
+    title = 'Novamacro, LLC Products'
+    desc = ('At Novamacro, we provide comprehensive technology solutions designed to meet the diverse needs of small '
+            'and medium-sized businesses. ')
+    context = {
+        'title': title,
+        'desc': desc,
+    }
+    return render(request, 'public/product.html', context)

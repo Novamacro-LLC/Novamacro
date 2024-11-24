@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="updated home page">
+    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="updated about us page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/about-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/about-us.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/public/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/public/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/product.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732474810332</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updated about us page">
+      <option name="closed" value="true" />
+      <created>1732483008657</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732483008658</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +156,7 @@
     <MESSAGE value="Second Commit" />
     <MESSAGE value="shelved patch update" />
     <MESSAGE value="updated home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated home page" />
+    <MESSAGE value="updated about us page" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated about us page" />
   </component>
 </project>
