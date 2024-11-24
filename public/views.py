@@ -37,3 +37,14 @@ def products(request):
         'desc': desc,
     }
     return render(request, 'public/product.html', context)
+
+
+#Create view for consulting page
+def consulting(request):
+    title = 'Novamacro, LLC Consulting'
+    desc = ('Transform your business operations with consulting services tailored to your unique needs. ')
+    context = {
+        'title': title,
+        'desc': desc,
+    }
+    return render(request, 'public/consulting.html', context)
