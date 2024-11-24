@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="" />
+    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Novamacro.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Novamacro/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Novamacro/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Novamacro/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Novamacro/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Novamacro/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/401.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/about-us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/connect.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/consulting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/search.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +38,9 @@
   "associatedIndex": 6
 }]]></component>
   <component name="ProjectId" id="2pJ42cw8Iog5fdEF7fFk7H8RnoY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,10 +50,46 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static" />
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\public" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Novamacro" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Novamacro" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -44,8 +106,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732470640554</updated>
-      <workItem from="1732470660621" duration="21000" />
+      <workItem from="1732470660621" duration="494000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
