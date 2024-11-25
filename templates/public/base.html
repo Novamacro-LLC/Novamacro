@@ -45,8 +45,8 @@ html { font-size: 16px; }
       <nav role="navigation" class="navbar-menu w-nav-menu">
         <a href="{% url 'about' %}" class="nav-link w-nav-link">About Us</a>
         <a href="{% url 'products' %}" class="nav-link w-nav-link">Products</a>
-        <a href="#" class="nav-link w-nav-link">Consulting</a>
-        <a href="#" class="nav-link w-nav-link">Connect</a>
+        <a href="{% url 'consulting' %}" class="nav-link w-nav-link">Consulting</a>
+        <a href="{% url 'connect' %}" class="nav-link w-nav-link">Connect</a>
         <div class="navbar-buttons">
           <a href="#" class="button medium w-inline-block">
             <div class="button-text">Sign In</div>
@@ -72,10 +72,10 @@ html { font-size: 16px; }
             <a href="{% url 'products' %}" class="nav-link w-inline-block">
               <div>Products</div>
             </a>
-            <a href="#" class="nav-link w-inline-block">
+            <a href="{% url 'consulting' %}" class="nav-link w-inline-block">
               <div>Consulting</div>
             </a>
-            <a href="#" class="nav-link w-inline-block">
+            <a href="{% url 'connect' %}" class="nav-link w-inline-block">
               <div>Connect</div>
             </a>
           </div>
