@@ -24,11 +24,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
+# Authentication Settings
+AUTH_USER_MODEL = 'internal.CustomUser'
+LOGIN_REDIRECT_URL = 'home'  # Change 'home' to your desired landing page after login
+LOGOUT_REDIRECT_URL = 'login'  # Where to redirect after logout
+LOGIN_URL = 'login'  # The name of your login URL pattern
 
+# Add the authentication backends
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Created Apps
     'public',
+    'internal',
+    'marketing',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +68,7 @@ ROOT_URLCONF = 'Novamacro.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [os.path.join(BASE_DIR / 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -79,8 +90,15 @@ WSGI_APPLICATION = 'Novamacro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USR'),
+        'PASSWORD': os.getenv('DB_PW'),
+        'HOST': os.getenv('DB_HST'),
+        'PORT': os.getenv('DB_PRT'),
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
@@ -121,13 +139,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-"""
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-"""
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

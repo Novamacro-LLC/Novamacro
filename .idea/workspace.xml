@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="updated headers and footers">
-      <change beforePath="$PROJECT_DIR$/templates/public/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/base.html" afterDir="false" />
+    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/internal/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketing/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Novamacro/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Novamacro/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Novamacro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Novamacro/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/systemflow-v-1-4-003e41a6-139dce4c34863.webflow.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/systemflow-v-1-4-003e41a6-139dce4c34863.webflow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/webflow.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/webflow.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +33,39 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="content" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fbdavison&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Novamacro-LLC/Novamacro.git&quot;,
+    &quot;accountId&quot;: &quot;439d720a-168f-49ff-81b0-7499f779ae6d&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -40,30 +80,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.Novamacro.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/fbdav/PycharmProjects/Novamacro/templates/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django Server.Novamacro.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;content&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fbdav/PycharmProjects/Novamacro/templates/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\css" />
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\public" />
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\internal" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\images" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static" />
-      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -73,14 +116,26 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DB_HST" value="app-0f857d3f-620d-469d-9828-ccefbd2da180-do-user-6170808-0.m.db.ondigitalocean.com" />
+        <env name="DB_NAME" value="novamacro-test" />
+        <env name="DB_PRT" value="25060" />
+        <env name="DB_PW" value="AVNS_KJ3xBUtpJwTqKeNlvS_" />
+        <env name="DB_USR" value="doadmin" />
         <env name="DJANGO_SETTINGS_MODULE" value="Novamacro.settings" />
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SECRET_KEY" value="TEST1" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Novamacro)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </EXTENSION>
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="localhost" />
@@ -110,6 +165,9 @@
       <option name="presentableId" value="Default" />
       <updated>1732470640554</updated>
       <workItem from="1732470660621" duration="494000" />
+      <workItem from="1732506712544" duration="26000" />
+      <workItem from="1732734062155" duration="4444000" />
+      <workItem from="1732738851980" duration="9442000" />
     </task>
     <task id="LOCAL-00001" summary="Second Commit">
       <option name="closed" value="true" />
@@ -223,11 +281,47 @@
       <option name="project" value="LOCAL" />
       <updated>1732495887112</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated headers and footers">
+      <option name="closed" value="true" />
+      <created>1732496038178</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1732496038178</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second Commit" />

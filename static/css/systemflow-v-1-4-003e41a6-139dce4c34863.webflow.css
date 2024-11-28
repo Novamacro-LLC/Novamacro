@@ -1967,6 +1967,8 @@ blockquote {
 .select.medium {
   border-color: var(--neutral--40);
   background-color: var(--neutral--10);
+  opacity: 1;
+  color: var(--neutral--80);
   cursor: pointer;
   border-radius: 6px;
   height: 44px;
@@ -5372,6 +5374,26 @@ blockquote {
   color: var(--info--60);
 }
 
+.form-block {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.div-block {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+
+.div-block.address {
+  grid-template-rows: auto auto auto;
+}
+
 html.w-mod-js [data-ix="tooltip-hover"] {
   display: inline-block;
 }
@@ -8754,6 +8776,10 @@ html.w-mod-js [data-ix="tooltip-hover"] {
 
 #w-node-_3ae7fa64-dd6d-e68a-46ac-04e99801d220-b0d6dcce, #w-node-_18aac0e8-bd16-9228-118f-c5d9bbf317c3-b0d6dcce, #w-node-_8fdd3309-b533-7b2e-2a5e-0874888c7c94-b0d6dcce {
   place-self: center end;
+}
+
+#firstname-form.w-node-cdcb9418-85d6-ebcd-6e81-b284e0864eb0-8e490223 {
+  grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
 @media screen and (max-width: 991px) {

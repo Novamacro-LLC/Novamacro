@@ -1,0 +1,44 @@
+{% extends 'public/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="hero-section">
+    <div class="container">
+      <div class="wrapper-box">
+        <div class="section-title centered s-m-0">
+          <div class="tagline c-b-neutral-30 c-t-neutral-100">Sign Up</div>
+          <h1 class="heading xl">Start your digital <span class="c-t-primary-60">transformation</span></h1>
+          <p class="body-text m s-m-b-0">Transform your business operations with Novamacro&#x27;s cutting-edge technology solutions, designed specifically for growing companies that want to compete at the next level. Join other successful businesses that have streamlined their workflows, reduced costs, and accelerated growth through our intuitive platform that adapts to your unique needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-block w-form">
+    <form id="form-5" name="wf-form-Form-5" data-name="Form 5" method="post" class="form" >
+        {% csrf_token %}
+        {{ form.email }}
+        <div>
+            {{ form.first_name }}
+            {{ form.last_name }}
+        </div>
+        {{ form.address }}
+        <div>
+          {{ form.city }}
+          {{ form.state_abbr }}
+          {{ form.zip_code }}
+          {{ form.phone_number }}
+        </div>
+        {{ form.password1 }}
+        {{ form.password2 }}
+        <input type="submit" data-wait="Please wait..." class="button medium form-button w-button" value="Sign up">
+      <div class="form-footer-links">
+        <a href="#">Already have an account?</a>
+      </div>
+    </form>
+    <div class="w-form-done">
+      <div>Thank you! Your submission has been received!</div>
+    </div>
+    <div class="w-form-fail">
+      <div>Oops! Something went wrong while submitting the form.</div>
+    </div>
+  </div>
+{% endblock %}
