@@ -119,4 +119,3 @@ class CustomUserCreationForm(UserCreationForm):
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
         self.fields['phone_number'].required = True
-        self.fields['address'].required = True

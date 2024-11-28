@@ -16,12 +16,12 @@
     <form id="form-5" name="wf-form-Form-5" data-name="Form 5" method="post" class="form" >
         {% csrf_token %}
         {{ form.email }}
-        <div>
+        <div class="div-block name">
             {{ form.first_name }}
             {{ form.last_name }}
         </div>
         {{ form.address }}
-        <div>
+        <div class="div-block address">
           {{ form.city }}
           {{ form.state_abbr }}
           {{ form.zip_code }}
@@ -29,16 +29,43 @@
         </div>
         {{ form.password1 }}
         {{ form.password2 }}
-        <input type="submit" data-wait="Please wait..." class="button medium form-button w-button" value="Sign up">
-      <div class="form-footer-links">
-        <a href="#">Already have an account?</a>
-      </div>
+        <!-- Change this button -->
+        <button type="submit" data-wait="Please wait..." class="button medium form-button w-button" onclick="openPaymentWindow('{{ payment_link }}')">Sign up</button>
+        <div class="form-footer-links">
+          <a href="{% url 'login' %}">Already have an account?</a>
+        </div>
     </form>
-    <div class="w-form-done">
-      <div>Thank you! Your submission has been received!</div>
-    </div>
-    <div class="w-form-fail">
-      <div>Oops! Something went wrong while submitting the form.</div>
+      {% if form.errors %}
+    <div class="w-form-fail" style="display: block;">
+      <div>
+        {% for field in form %}
+          {% for error in field.errors %}
+              <div>{{ error }}</div>
+          {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+          <div>{{ error }}</div>
+        {% endfor %}
+      </div>
     </div>
   </div>
+  {% endif %}
+  
+  {% if messages %}
+  <div class="w-form-done" style="display: block;">
+    {% for message in messages %}
+      <div>{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+<script>
+    function openPaymentWindow(paymentLink) {
+        // Submit the form
+        document.getElementById('form-5').submit();
+        // Open payment link in new window
+        if (paymentLink) {
+            window.open(paymentLink, '_blank');
+        }
+    }
+</script> 
 {% endblock %}

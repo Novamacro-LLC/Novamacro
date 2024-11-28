@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marketing/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/public/register.html" afterDir="false" />
+    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="created private, internal, and marketing apps.  Brought over register.html with all of the configuration">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL Scripts/sql1_deploy.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Novamacro/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Novamacro/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Novamacro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Novamacro/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/systemflow-v-1-4-003e41a6-139dce4c34863.webflow.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/systemflow-v-1-4-003e41a6-139dce4c34863.webflow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/webflow.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/webflow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/webflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/webflow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/public/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/public/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="SQL File" />
       </list>
     </option>
   </component>
@@ -80,33 +84,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.Novamacro.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;content&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fbdav/PycharmProjects/Novamacro/templates/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.Novamacro.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "content",
+    "last_opened_file_path": "C:/Users/fbdav/PycharmProjects/Novamacro/static/js",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\js" />
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\css" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\SQL Scripts" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\css" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\public" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\internal" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\images" />
-      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -116,13 +128,13 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DB_HST" value="app-0f857d3f-620d-469d-9828-ccefbd2da180-do-user-6170808-0.m.db.ondigitalocean.com" />
         <env name="DB_NAME" value="novamacro-test" />
         <env name="DB_PRT" value="25060" />
         <env name="DB_PW" value="AVNS_KJ3xBUtpJwTqKeNlvS_" />
         <env name="DB_USR" value="doadmin" />
         <env name="DJANGO_SETTINGS_MODULE" value="Novamacro.settings" />
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="SECRET_KEY" value="TEST1" />
       </envs>
       <option name="SDK_HOME" value="" />
@@ -167,7 +179,8 @@
       <workItem from="1732470660621" duration="494000" />
       <workItem from="1732506712544" duration="26000" />
       <workItem from="1732734062155" duration="4444000" />
-      <workItem from="1732738851980" duration="9442000" />
+      <workItem from="1732738851980" duration="9898000" />
+      <workItem from="1732802259220" duration="16369000" />
     </task>
     <task id="LOCAL-00001" summary="Second Commit">
       <option name="closed" value="true" />
@@ -289,13 +302,36 @@
       <option name="project" value="LOCAL" />
       <updated>1732496038178</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="created private, internal, and marketing apps.  Brought over register.html with all of the configuration">
+      <option name="closed" value="true" />
+      <created>1732767687839</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1732767687839</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="content" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -311,7 +347,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="content" />
                       </list>
                     </value>
                   </entry>
@@ -336,6 +372,7 @@
     <MESSAGE value="updated settings for deployment" />
     <MESSAGE value="updated gunicorn in requirements file" />
     <MESSAGE value="updated headers and footers" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated headers and footers" />
+    <MESSAGE value="created private, internal, and marketing apps.  Brought over register.html with all of the configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="created private, internal, and marketing apps.  Brought over register.html with all of the configuration" />
   </component>
 </project>
