@@ -32,7 +32,7 @@
         <!-- Change this button -->
         <button type="submit" data-wait="Please wait..." class="button medium form-button w-button" onclick="openPaymentWindow('{{ payment_link }}')">Sign up</button>
         <div class="form-footer-links">
-          <a href="{% url 'login' %}">Already have an account?</a>
+          <a href="{% url 'internal:login' %}">Already have an account?</a>
         </div>
     </form>
       {% if form.errors %}

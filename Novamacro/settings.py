@@ -30,9 +30,9 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split("
 
 # Authentication Settings
 AUTH_USER_MODEL = 'internal.CustomUser'
-LOGIN_REDIRECT_URL = 'home'  # Change 'home' to your desired landing page after login
-LOGOUT_REDIRECT_URL = 'login'  # Where to redirect after logout
-LOGIN_URL = 'login'  # The name of your login URL pattern
+LOGIN_REDIRECT_URL = 'internal:login_redirect'  # Change 'home' to your desired landing page after login
+LOGOUT_REDIRECT_URL = 'internal:login'  # Where to redirect after logout
+LOGIN_URL = 'internal:login'  # The name of your login URL pattern
 
 # Add the authentication backends
 AUTHENTICATION_BACKENDS = [
@@ -151,3 +151,29 @@ else:
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# For development (prints emails to console)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# For production (configure with your email service)
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'your-smtp-server'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@example.com'
+# EMAIL_HOST_PASSWORD = 'your-password'
+
+# At the bottom of settings.py
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}

@@ -48,7 +48,7 @@ html { font-size: 16px; }
         <a href="{% url 'consulting' %}" class="nav-link w-nav-link">Consulting</a>
         <a href="{% url 'connect' %}" class="nav-link w-nav-link">Connect</a>
         <div class="navbar-buttons">
-          <a href="#" class="button medium w-inline-block">
+          <a href="{% url 'internal:login' %}" class="button medium w-inline-block">
             <div class="button-text">Sign In</div>
           </a>
         </div>

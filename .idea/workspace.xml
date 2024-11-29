@@ -4,19 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="created private, internal, and marketing apps.  Brought over register.html with all of the configuration">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SQL Scripts/sql1_deploy.sql" afterDir="false" />
+    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/private/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/internal/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/private/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/password_reset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_complete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_confirm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_subject.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/342e9c79-cb7b-46de-8f2c-e7c38b0d7622.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/342e9c79-cb7b-46de-8f2c-e7c38b0d7622.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Novamacro/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Novamacro/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Novamacro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Novamacro/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/systemflow-v-1-4-003e41a6-139dce4c34863.webflow.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/systemflow-v-1-4-003e41a6-139dce4c34863.webflow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/webflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/webflow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/private/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/private/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/public/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/public/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/public/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/public/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/register.html" afterDir="false" />
     </list>
@@ -31,8 +38,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="SQL File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -84,29 +92,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.Novamacro.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "content",
-    "last_opened_file_path": "C:/Users/fbdav/PycharmProjects/Novamacro/static/js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.Novamacro.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;content&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fbdav/PycharmProjects/Novamacro/static/js&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\js" />
@@ -180,7 +189,8 @@
       <workItem from="1732506712544" duration="26000" />
       <workItem from="1732734062155" duration="4444000" />
       <workItem from="1732738851980" duration="9898000" />
-      <workItem from="1732802259220" duration="16369000" />
+      <workItem from="1732802259220" duration="19710000" />
+      <workItem from="1732905578084" duration="9160000" />
     </task>
     <task id="LOCAL-00001" summary="Second Commit">
       <option name="closed" value="true" />
@@ -310,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732767687839</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Created registration with payment links sent">
+      <option name="closed" value="true" />
+      <created>1732820089190</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732820089190</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +391,7 @@
     <MESSAGE value="updated gunicorn in requirements file" />
     <MESSAGE value="updated headers and footers" />
     <MESSAGE value="created private, internal, and marketing apps.  Brought over register.html with all of the configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="created private, internal, and marketing apps.  Brought over register.html with all of the configuration" />
+    <MESSAGE value="Created registration with payment links sent" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created registration with payment links sent" />
   </component>
 </project>

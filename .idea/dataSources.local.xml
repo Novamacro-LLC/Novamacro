@@ -10,7 +10,9 @@
       <user-name>doadmin</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" qname="novamacro-test" />
+          <node kind="database" qname="novamacro-test">
+            <node kind="schema" negative="1" />
+          </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>
