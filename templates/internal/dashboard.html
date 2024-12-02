@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>This is the staff dashboard</h1>
-</body>
-</html>
+{% extends 'internal/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="hero-section">
+    <div class="container">
+      <div class="wrapper-box">
+        <div class="section-title centered s-m-0">
+          <div class="tagline c-b-neutral-30 c-t-neutral-100">Your Portal</div>
+          <h1 class="heading xl">Your Work <span class="text-span-10">Home</span></h1>
+          <p class="body-text m s-m-b-0">Welcome to your Novamacro Colleague Portal. Everything that you need to manage your day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

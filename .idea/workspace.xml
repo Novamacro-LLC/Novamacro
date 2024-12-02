@@ -4,28 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/private/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/internal/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/private/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/public/password_reset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_complete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_email.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/public/password_reset_subject.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/342e9c79-cb7b-46de-8f2c-e7c38b0d7622.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/342e9c79-cb7b-46de-8f2c-e7c38b0d7622.xml" afterDir="false" />
+    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="Finalized login and ability to attach products to users">
+      <change afterPath="$PROJECT_DIR$/map_project.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketing/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marketing/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/internal/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/marketing/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/marketing/social_credentials.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/marketing/social_credentials_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/private/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Novamacro/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Novamacro/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Novamacro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Novamacro/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/private/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/internal/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/internal/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/private/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/private/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +72,9 @@
     &quot;accountId&quot;: &quot;439d720a-168f-49ff-81b0-7499f779ae6d&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/map_project.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -123,11 +120,11 @@
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro" />
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\private" />
+      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\internal" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\SQL Scripts" />
       <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\css" />
-      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\public" />
-      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\templates\internal" />
-      <recent name="C:\Users\fbdav\PycharmProjects\Novamacro\static\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -190,7 +187,9 @@
       <workItem from="1732734062155" duration="4444000" />
       <workItem from="1732738851980" duration="9898000" />
       <workItem from="1732802259220" duration="19710000" />
-      <workItem from="1732905578084" duration="9160000" />
+      <workItem from="1732905578084" duration="9266000" />
+      <workItem from="1732993409811" duration="10763000" />
+      <workItem from="1733118826843" duration="1100000" />
     </task>
     <task id="LOCAL-00001" summary="Second Commit">
       <option name="closed" value="true" />
@@ -328,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732820089190</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Finalized login and ability to attach products to users">
+      <option name="closed" value="true" />
+      <created>1732918376723</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1732918376723</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +399,7 @@
     <MESSAGE value="updated headers and footers" />
     <MESSAGE value="created private, internal, and marketing apps.  Brought over register.html with all of the configuration" />
     <MESSAGE value="Created registration with payment links sent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created registration with payment links sent" />
+    <MESSAGE value="Finalized login and ability to attach products to users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalized login and ability to attach products to users" />
   </component>
 </project>
