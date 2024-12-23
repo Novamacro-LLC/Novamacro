@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #Created Apps
+    'oauth2_provider',
+    'social_django',
+    # Created Apps
     'public',
     'internal',
     'marketing',
@@ -61,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'marketing.services.TokenRefreshMiddleware',
 ]
 
 ROOT_URLCONF = 'Novamacro.urls'
@@ -177,3 +180,8 @@ LOGGING = {
         'level': 'INFO',
     },
 }
+
+# AWS Settings
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_DEFAULT_REGION = 'us-east-1'

@@ -1,0 +1,44 @@
+# marketing/templates/marketing/content/source_list.html
+{% extends 'marketing/base.html' %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="mb-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-gray-900">Content Sources</h1>
+        <div class="space-x-4">
+            <a href="{% url 'marketing:auto_discover_sources' %}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Auto-Discover Sources
+            </a>
+            <a href="{% url 'marketing:add_source' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Add New Source
+            </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold mb-4">Social Media</h2>
+            <p class="text-gray-600 mb-4">Manage your social media credentials and posts</p>
+            <a href="{% url 'marketing:social_credentials' %}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                View Credentials
+            </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold mb-4">Content Discovery</h2>
+            <p class="text-gray-600 mb-4">View and manage discovered content</p>
+            <a href="{% url 'marketing:discovered_list' %}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                View Content
+            </a>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="bg-white rounded-lg shadow">
+        <div class="px-6 py-4 border-b border-gray-200">
+            <h2 class="text-xl font-semibold">Recent Activity</h2>
+        </div>
+        <div class="p-6">
+            <p class="text-gray-600">No recent activity to display.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

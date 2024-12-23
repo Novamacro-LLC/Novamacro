@@ -84,3 +84,66 @@ class SocialMediaCredentials(models.Model):
 
     class Meta:
         unique_together = ['user', 'platform']
+
+
+class SourceCategory(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Source Categories"
+
+    def __str__(self):
+        return self.name
+
+
+class SourceAnalysis(models.Model):
+    source = models.OneToOneField(ContentSource, on_delete=models.CASCADE)
+    quality_score = models.IntegerField(default=0)  # 0-100
+    relevance_score = models.IntegerField(default=0)  # 0-100
+    authority_score = models.IntegerField(default=0)  # 0-100
+    freshness_score = models.IntegerField(default=0)  # 0-100
+    engagement_score = models.IntegerField(default=0)  # 0-100
+    overall_rank = models.IntegerField(default=0)
+    categories = models.ManyToManyField(SourceCategory)
+    last_analyzed = models.DateTimeField(auto_now=True)
+    analysis_notes = models.JSONField(default=dict)
+
+    class Meta:
+        verbose_name_plural = "Source Analyses"
+
+    def calculate_overall_rank(self):
+        weights = {
+            'quality': 0.3,
+            'relevance': 0.25,
+            'authority': 0.2,
+            'freshness': 0.15,
+            'engagement': 0.1
+        }
+
+        weighted_sum = (
+                self.quality_score * weights['quality'] +
+                self.relevance_score * weights['relevance'] +
+                self.authority_score * weights['authority'] +
+                self.freshness_score * weights['freshness'] +
+                self.engagement_score * weights['engagement']
+        )
+
+        return round(weighted_sum)
+
+    def __str__(self):
+        return f"Analysis for {self.source.name}"
+
+
+class OAuthState(models.Model):
+    """Store OAuth state to prevent CSRF attacks"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    state = models.CharField(max_length=50)
+    platform = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['state']),
+        ]
