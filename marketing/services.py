@@ -630,32 +630,99 @@ class SocialOAuthService:
     def __init__(self):
         self.oauth_settings = {
             'twitter': {
-                'client_id': 'your-client-id',
-                'client_secret': 'your-client-secret',
                 'auth_url': 'https://twitter.com/i/oauth2/authorize',
                 'token_url': 'https://api.twitter.com/2/oauth2/token',
-                'redirect_uri': 'your-redirect-uri',
                 'scope': 'tweet.read tweet.write users.read offline.access',
             },
             'facebook': {
-                'client_id': 'your-app-id',
-                'client_secret': 'your-app-secret',
                 'auth_url': 'https://www.facebook.com/v18.0/dialog/oauth',
                 'token_url': 'https://graph.facebook.com/v18.0/oauth/access_token',
-                'redirect_uri': 'your-redirect-uri',
-                'scope': 'pages_show_list,pages_read_engagement,pages_manage_posts',
+                'scope': 'public_profile'  # Simplified basic scopes
             },
             'linkedin': {
-                'client_id': 'your-client-id',
-                'client_secret': 'your-client-secret',
                 'auth_url': 'https://www.linkedin.com/oauth/v2/authorization',
                 'token_url': 'https://www.linkedin.com/oauth/v2/accessToken',
-                'redirect_uri': 'your-redirect-uri',
                 'scope': 'w_member_social r_liteprofile r_organization_social',
             }
         }
 
-    def check_and_refresh_token(self, credentials) -> Tuple[bool, Optional[str]]:
+    def get_authorization_url(self, platform, user):
+        """Generate OAuth authorization URL for the specified platform"""
+        if platform not in self.oauth_settings:
+            raise ValueError(f"Unsupported platform: {platform}")
+
+        # Get credentials from database
+        try:
+            credentials = SocialMediaCredentials.objects.get(
+                user=user,
+                platform=platform
+            )
+        except SocialMediaCredentials.DoesNotExist:
+            raise ValueError(f"No credentials found for {platform}")
+
+        settings = self.oauth_settings[platform]
+
+        # Generate random state for CSRF protection
+        state = secrets.token_urlsafe(32)
+
+        # Store state in database
+        OAuthState.objects.create(
+            user=user,
+            state=state,
+            platform=platform
+        )
+
+        # Get your site's base URL from settings
+        site_url = getattr(settings, 'SITE_URL', 'http://localhost:8000')
+
+        # Build authorization URL using credentials from database
+        params = {
+            'client_id': credentials.client_id,
+            'redirect_uri': f"{site_url}/marketing/oauth/{platform}/callback/",
+            'scope': settings['scope'],
+            'state': state,
+            'response_type': 'code'
+        }
+
+        # Add platform-specific parameters
+        if platform == 'facebook':
+            params['auth_type'] = 'rerequest'
+
+        auth_url = f"{settings['auth_url']}?{urlencode(params)}"
+        return auth_url
+
+    def handle_oauth_callback(self, platform, code, state):
+        """Handle OAuth callback and get tokens"""
+        # Verify state and platform validity
+        try:
+            oauth_state = OAuthState.objects.get(state=state)
+            if oauth_state.platform != platform:
+                raise ValueError("Invalid platform in OAuth state")
+        except OAuthState.DoesNotExist:
+            raise ValueError("Invalid OAuth state")
+
+        # Get platform settings
+        if platform not in self.oauth_settings:
+            raise ValueError(f"Unsupported platform: {platform}")
+
+        settings = self.oauth_settings[platform]
+        site_url = getattr(settings, 'SITE_URL', 'http://localhost:8000')
+
+        # Exchange code for tokens
+        response = requests.post(settings['token_url'], data={
+            'client_id': oauth_state.user.socialmediaCredentials.get(platform=platform).client_id,
+            'client_secret': oauth_state.user.socialmediaCredentials.get(platform=platform).client_secret,
+            'code': code,
+            'redirect_uri': f"{site_url}/marketing/oauth/{platform}/callback/",
+            'grant_type': 'authorization_code'
+        })
+
+        if response.status_code != 200:
+            raise ValueError(f"Token exchange failed: {response.text}")
+
+        return response.json()
+
+    def check_and_refresh_token(self, credentials):
         """Check token validity and refresh if needed"""
         try:
             if not self._needs_refresh(credentials):
@@ -663,6 +730,7 @@ class SocialOAuthService:
 
             new_tokens = self._refresh_token(credentials)
 
+            # Update credentials with new tokens
             credentials.access_token = new_tokens['access_token']
             credentials.refresh_token = new_tokens.get('refresh_token', credentials.refresh_token)
             credentials.expires_at = timezone.now() + timedelta(seconds=new_tokens.get('expires_in', 3600))
@@ -677,16 +745,69 @@ class SocialOAuthService:
         except Exception as e:
             return False, f"Unexpected error during token refresh: {str(e)}"
 
-    def _needs_refresh(self, credentials) -> bool:
+    def _needs_refresh(self, credentials):
         """Check if token needs refresh"""
         if not credentials.expires_at:
             return True
+
+        # Refresh if token expires in less than 1 hour
         return credentials.expires_at - timezone.now() < timedelta(hours=1)
 
-    def _refresh_token(self, credentials) -> Dict:
-        """Placeholder for token refresh implementation"""
-        # Implement actual token refresh logic here
-        raise NotImplementedError("Token refresh not implemented")
+    def _refresh_token(self, credentials):
+        """Refresh OAuth tokens"""
+        if credentials.platform not in self.oauth_settings:
+            raise ValueError(f"Unsupported platform: {credentials.platform}")
+
+        settings = self.oauth_settings[credentials.platform]
+        site_url = getattr(settings, 'SITE_URL', 'http://localhost:8000')
+
+        data = {
+            'client_id': credentials.client_id,
+            'client_secret': credentials.client_secret,
+            'grant_type': 'refresh_token',
+            'refresh_token': credentials.refresh_token,
+        }
+
+        # Add platform-specific parameters
+        if credentials.platform == 'facebook':
+            data['redirect_uri'] = f"{site_url}/marketing/oauth/facebook/callback/"
+
+        try:
+            response = requests.post(settings['token_url'], data=data)
+            response.raise_for_status()
+            return response.json()
+
+        except requests.exceptions.RequestException as e:
+            raise TokenRefreshError(f"Token refresh request failed: {str(e)}")
+        except Exception as e:
+            raise TokenRefreshError(f"Token refresh failed: {str(e)}")
+
+    def verify_token_validity(self, credentials):
+        """Verify if the token is valid"""
+        try:
+            if credentials.platform == 'facebook':
+                response = requests.get(
+                    'https://graph.facebook.com/v18.0/me',
+                    params={'access_token': credentials.access_token}
+                )
+            elif credentials.platform == 'twitter':
+                response = requests.get(
+                    'https://api.twitter.com/2/users/me',
+                    headers={'Authorization': f'Bearer {credentials.access_token}'}
+                )
+            elif credentials.platform == 'linkedin':
+                response = requests.get(
+                    'https://api.linkedin.com/v2/me',
+                    headers={'Authorization': f'Bearer {credentials.access_token}'}
+                )
+            else:
+                return False, "Unsupported platform"
+
+            response.raise_for_status()
+            return True, None
+
+        except requests.exceptions.RequestException as e:
+            return False, str(e)
 
 
 class TokenRefreshMiddleware:

@@ -73,8 +73,8 @@ class SocialMediaCredentials(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     platform = models.CharField(max_length=20, choices=PLATFORM_CHOICES)
-    api_key = models.CharField(max_length=255)
-    api_secret = models.CharField(max_length=255)
+    client_id = models.CharField(max_length=255)
+    client_secret = models.CharField(max_length=255)
     access_token = models.CharField(max_length=255)
     access_token_secret = models.CharField(max_length=255, null=True, blank=True)  # For X (Twitter)
     refresh_token = models.CharField(max_length=255, null=True, blank=True)

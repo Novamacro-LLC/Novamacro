@@ -4,14 +4,15 @@ from .models import SocialMediaCredentials, ContentSource, SocialPost
 
 
 class SocialMediaCredentialsForm(forms.ModelForm):
-    api_key = forms.CharField(widget=forms.PasswordInput())
-    api_secret = forms.CharField(widget=forms.PasswordInput())
-    access_token = forms.CharField(widget=forms.PasswordInput())
-    access_token_secret = forms.CharField(widget=forms.PasswordInput(), required=False)
-
     class Meta:
         model = SocialMediaCredentials
-        fields = ['platform', 'api_key', 'api_secret', 'access_token', 'access_token_secret']
+        fields = ['platform', 'client_id', 'client_secret', 'access_token_secret'] # Remove access_token_secret from initial form
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Make access_token optional since it will be obtained through OAuth
+        if 'access_token' in self.fields:
+            self.fields['access_token'].required = False
 
 
 class ContentSourceForm(forms.ModelForm):

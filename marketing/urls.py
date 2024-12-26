@@ -28,4 +28,7 @@ urlpatterns = [
     path('content/sources/discover/', views.AutoDiscoverSourcesView.as_view(), name='auto_discover_sources'),
     path('oauth/<str:platform>/start/', views.InitiateOAuthView.as_view(), name='oauth_start'),
     path('oauth/<str:platform>/callback/', views.OAuthCallbackView.as_view(), name='oauth_callback'),
+    path('social-credentials/<int:pk>/delete/', views.DeleteSocialMediaCredentialsView.as_view(), name='delete_credentials'),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
+    path('terms-of-service/', views.terms_of_service, name='terms_of_service'),
 ]

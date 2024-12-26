@@ -45,6 +45,26 @@ class ContentSourceListView(LoginRequiredMixin, ListView):
         return ContentSource.objects.filter(user=self.request.user)
 
 
+class AddSocialMediaCredentialsView(LoginRequiredMixin, CreateView):
+    model = SocialMediaCredentials
+    form_class = SocialMediaCredentialsForm
+    template_name = 'marketing/social_credentials_form.html'
+    success_url = reverse_lazy('marketing:social_credentials')
+
+    def get_initial(self):
+        initial = super().get_initial()
+        platform = self.request.GET.get('platform')
+        if platform:
+            initial['platform'] = platform
+        return initial
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        messages.success(self.request, f"Credentials added successfully. Now you can connect your account.")
+        return super().form_valid(form)
+
+
+# views.py
 class AddContentSourceView(LoginRequiredMixin, CreateView):
     model = ContentSource
     form_class = ContentSourceForm
@@ -53,8 +73,8 @@ class AddContentSourceView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, "Content source added successfully.")
         return super().form_valid(form)
-
 
 class DiscoveredContentListView(LoginRequiredMixin, ListView):
     model = DiscoveredContent
@@ -391,3 +411,20 @@ class CreateSocialPostView(LoginRequiredMixin, CreateView):
         # Token will be automatically refreshed by middleware if needed
         # Proceed with posting...
         return super().form_valid(form)
+
+
+class DeleteSocialMediaCredentialsView(LoginRequiredMixin, DeleteView):
+    model = SocialMediaCredentials
+    success_url = reverse_lazy('marketing:social_credentials')
+    template_name = 'marketing/social_credentials_confirm_delete.html'
+
+    def get_queryset(self):
+        return SocialMediaCredentials.objects.filter(user=self.request.user)
+
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
+
+
+def terms_of_service(request):
+    return render(request, 'terms_of_service.html')
