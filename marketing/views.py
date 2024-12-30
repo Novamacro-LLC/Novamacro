@@ -28,7 +28,9 @@ from .services import (
     ContentAnalyzer,
     SourceRankingService,
     SocialOAuthService,
-    AutomatedSourceManager
+    AutomatedSourceManager,
+    SocialMediaService,
+    OAuthError
 )
 
 
@@ -296,9 +298,20 @@ class OAuthCallbackView(LoginRequiredMixin, View):
     def get(self, request, platform):
         code = request.GET.get('code')
         state = request.GET.get('state')
+        error = request.GET.get('error')
+        error_description = request.GET.get('error_description')
 
-        if not code or not state:
-            messages.error(request, "Invalid OAuth callback parameters")
+        # Add debug logging
+        print("OAuth Callback Received:")
+        print(f"Platform: {platform}")
+        print(f"Code present: {bool(code)}")
+        print(f"State present: {bool(state)}")
+        print(f"Error: {error}")
+        print(f"Error description: {error_description}")
+        print(f"All query params: {request.GET}")
+
+        if error:
+            messages.error(request, f"Authentication error: {error_description or error}")
             return redirect('marketing:social_credentials')
 
         oauth_service = SocialOAuthService()

@@ -71,13 +71,13 @@ class SocialMediaCredentials(models.Model):
         ('linkedin', 'LinkedIn'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='social_credentials')
     platform = models.CharField(max_length=20, choices=PLATFORM_CHOICES)
-    client_id = models.CharField(max_length=255)
-    client_secret = models.CharField(max_length=255)
-    access_token = models.CharField(max_length=255)
-    access_token_secret = models.CharField(max_length=255, null=True, blank=True)  # For X (Twitter)
-    refresh_token = models.CharField(max_length=255, null=True, blank=True)
+    client_id = models.CharField(max_length=1024)
+    client_secret = models.CharField(max_length=1024)
+    access_token = models.CharField(max_length=2048)
+    access_token_secret = models.CharField(max_length=1024, null=True, blank=True)  # For X (Twitter)
+    refresh_token = models.CharField(max_length=1024, null=True, blank=True)
     expires_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -137,11 +137,11 @@ class SourceAnalysis(models.Model):
 
 
 class OAuthState(models.Model):
-    """Store OAuth state to prevent CSRF attacks"""
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     state = models.CharField(max_length=50)
     platform = models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now_add=True)
+    code_verifier = models.CharField(max_length=255, null=True, blank=True)  # Add this
 
     class Meta:
         indexes = [

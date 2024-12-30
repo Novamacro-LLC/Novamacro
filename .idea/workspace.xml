@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="Updated Marketing app with the first draft of the social media manager">
-      <change afterPath="$PROJECT_DIR$/marketing/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/marketing/privacy_policy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/marketing/social_credentials_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/marketing/terms_of_service.html" afterDir="false" />
+    <list default="true" id="a2182962-65eb-44d9-ad5e-58b4a68dfc32" name="Changes" comment="Updated Marketing app with the updated draft of the social media manager">
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketing/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketing/marketing_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/templatetags/marketing_filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketing/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketing/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/marketing/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marketing/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/marketing/social_credentials.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marketing/social_credentials.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +124,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="AWS_ACCESS_KEY_ID" value="ASIA2UC3EGINX7UBYYGU" />
         <env name="AWS_SECRET_ACCESS_KEY" value="KMYXzM7xlFkrki/e3SMPulfSL2ZlXAFo6DkZgMDn" />
         <env name="DB_HST" value="app-0f857d3f-620d-469d-9828-ccefbd2da180-do-user-6170808-0.m.db.ondigitalocean.com" />
@@ -140,7 +133,6 @@
         <env name="DB_PW" value="AVNS_KJ3xBUtpJwTqKeNlvS_" />
         <env name="DB_USR" value="doadmin" />
         <env name="DJANGO_SETTINGS_MODULE" value="Novamacro.settings" />
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="SECRET_KEY" value="TEST1" />
       </envs>
       <option name="SDK_HOME" value="" />
@@ -199,6 +191,10 @@
       <workItem from="1734406777236" duration="1513000" />
       <workItem from="1734735823451" duration="6030000" />
       <workItem from="1734985820994" duration="13840000" />
+      <workItem from="1735252844785" duration="196000" />
+      <workItem from="1735253240173" duration="3120000" />
+      <workItem from="1735326171288" duration="3826000" />
+      <workItem from="1735575312110" duration="3774000" />
     </task>
     <task id="LOCAL-00001" summary="Second Commit">
       <option name="closed" value="true" />
@@ -360,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734988544038</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Updated Marketing app with the updated draft of the social media manager">
+      <option name="closed" value="true" />
+      <created>1735252900142</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1735252900142</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,6 +430,7 @@
     <MESSAGE value="Created registration with payment links sent" />
     <MESSAGE value="Finalized login and ability to attach products to users" />
     <MESSAGE value="Updated Marketing app with the first draft of the social media manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Marketing app with the first draft of the social media manager" />
+    <MESSAGE value="Updated Marketing app with the updated draft of the social media manager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Marketing app with the updated draft of the social media manager" />
   </component>
 </project>
